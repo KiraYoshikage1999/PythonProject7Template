@@ -6,13 +6,25 @@ from django.template.response import TemplateResponse
 import random
 
 class Person:
-    def __init__(self, name, surname, age):
+    def __init__(self, name, surname, age, number):
         self.name = name
         self.surname = surname
         self.age = age
+        self.number = number
 
     def __str__(self):
-        return f"{self.name} {self.surname} {self.age}"
+        return f" {self.name} - {self.surname} ; Age {self.age}; Number: {self.number}"
+
+def contacts(request):
+    persons = [
+        Person(name = "Alexey", surname = "Marahovskiy", age = 17, number = "33"),
+        Person(name = "Dima", surname = "Dobrovolskiy", age = 18, number = "??"),
+        Person(name = "Kolya", surname = "Belousov", age = 18 , number = "??"),
+    ]
+    return TemplateResponse(request, "contacts.html", {"persons": persons})
+def style(request):
+    return render(request, 'main_page.html')
+
 def index(request):
     context = {}
 
