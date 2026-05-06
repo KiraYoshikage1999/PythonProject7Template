@@ -36,7 +36,7 @@ def index(request):
 
     context["list"] = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
     context["dict"] = {"key1":"value1", "key2":"value2"}
-    context["person"] = Person("William", "Butcher", 30)
+    context["person"] = Person("William", "Butcher", 30, "111111")
     context["random_value"] = random.randint(-100,100)
     context["empty_list"] = []
 
